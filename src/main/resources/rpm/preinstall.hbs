@@ -1,0 +1,3 @@
+if [ "$1" -eq 1 ]; then
+    useradd --comment "{{applicationUser}} service user" --shell /sbin/nologin --system --user-group {{applicationUser}} --home-dir /usr/share/{{applicationUser}} {{applicationUser}}
+fi
