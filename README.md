@@ -14,11 +14,12 @@ The Spring Boot RPM Maven plugin tries to give this stuff a home where it can be
 Features
 ========
 Based on the Maven project it builds an RPM containing:
-* the artifact: `/usr/share/${project.name}/${artifact}`
-* upstart service job that runs the artifact using `java -server` at system start: `/etc/init/${project.name}`
+* the artifact: `/usr/share/${project.artifactId}/${artifact}`
+* pre-install scriptlet that creates a dedicated service user for the application
+* upstart service job that runs the artifact under the previously created service user using `java -server` at system start: `/etc/init/${project.artifactId}`
 * CloudWatch Logs compatible logging configuration:
- * Logback: `/etc/${project.name}/default-logback.xml`
- * CloudWatch Logs client: `/etc/awslogs.conf.d/${project.name}.conf`
+ * Logback: `/etc/${project.artifactId}/default-logback.xml`
+ * CloudWatch Logs client: `/etc/awslogs.conf.d/${project.artifactId}.conf`
 
 Usage
 =====
