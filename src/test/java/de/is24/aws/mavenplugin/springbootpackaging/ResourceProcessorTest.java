@@ -30,7 +30,7 @@ public class ResourceProcessorTest {
 	public void setUp() {
 		model.put(ResourceProcessor.APPLICATION_KEY, APPLICATION_NAME);
 
-		targetDir = new File(System.getProperty("java.io.tmpdir") + "/springbootpackaging-test");
+		targetDir = new File(System.getProperty("java.io.tmpdir") + "/springbootrpm-test");
 		targetDir.mkdir();
 
 		Set<String> sourceFiles = new HashSet<>();

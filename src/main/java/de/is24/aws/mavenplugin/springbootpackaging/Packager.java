@@ -13,7 +13,6 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
-import org.apache.maven.shared.utils.StringUtils;
 import org.twdata.maven.mojoexecutor.MojoExecutor;
 
 import javax.annotation.Nullable;
@@ -65,7 +64,7 @@ public class Packager extends AbstractMojo {
 	private String license;
 	@Parameter(defaultValue = "${project.url}")
 	private String url;
-	@Parameter(defaultValue = "Spring Boot Packaging Maven Plugin")
+	@Parameter(defaultValue = "Spring Boot Rpm Maven Plugin")
 	private String packager;
 	@Parameter
 	private List<String> requires;
