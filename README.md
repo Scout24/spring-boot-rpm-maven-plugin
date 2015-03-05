@@ -4,9 +4,9 @@ Maven plugin that builds an RPM with upstart service job
 Intention
 =========
 When creating applications using Spring Boot you need connections to the underlying operating system:
- * packaging
- * service start/stop
- * logging
+* packaging
+* service start/stop
+* logging
 
 This glue code is often the same between applications and because of this copied around and then slightly modified.
 The Spring Boot RPM Maven plugin tries to give this stuff a home where it can be collaboratively maintained.
@@ -14,11 +14,11 @@ The Spring Boot RPM Maven plugin tries to give this stuff a home where it can be
 Features
 ========
 Based on the Maven project it builds an RPM containing:
- * the artifact: `/usr/share/${project.name}/${artifact}`
- * upstart service job that runs the artifact using `java -server` at system start: `/etc/init/${project.name}`
- * CloudWatch Logs compatible logging configuration:
- ** Logback: `/etc/${project.name}/default-logback.xml`
- ** CloudWatch Logs client: `/etc/awslogs.conf.d/${project.name}.conf`
+* the artifact: `/usr/share/${project.name}/${artifact}`
+* upstart service job that runs the artifact using `java -server` at system start: `/etc/init/${project.name}`
+* CloudWatch Logs compatible logging configuration:
+ * Logback: `/etc/${project.name}/default-logback.xml`
+ * CloudWatch Logs client: `/etc/awslogs.conf.d/${project.name}.conf`
 
 Usage
 =====
@@ -45,8 +45,8 @@ Usage
 
 Prerequisites
 =============
- * Java >= 1.7.0
- * Maven >= 3.2.3 (did not test with earlier versions)
+* Java >= 1.7.0
+* Maven >= 3.2.3 (did not test with earlier versions)
 
 License
 =======
