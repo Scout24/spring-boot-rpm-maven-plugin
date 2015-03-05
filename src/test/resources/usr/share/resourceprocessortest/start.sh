@@ -27,6 +27,6 @@ for configfile in /etc/resourceprocessortest/*.sh ; do
     source "$configfile"
 done
 
-java -server "${JAVA_OPTS[@]}" -Dlogging.config="$LOGGING_CONFIG" -jar /opt/resourceprocessortest/resourceprocessortest.jar &
+java -server "${JAVA_OPTS[@]}" -Dlogging.config="$LOGGING_CONFIG" -jar /usr/share/resourceprocessortest/resourceprocessortest.jar &
 
 wait

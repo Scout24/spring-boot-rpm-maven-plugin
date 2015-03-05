@@ -27,6 +27,6 @@ for configfile in /etc/{{application}}/*.sh ; do
     source "$configfile"
 done
 
-java -server "${JAVA_OPTS[@]}" -Dlogging.config="$LOGGING_CONFIG" -jar /opt/{{application}}/{{artifact}} &
+java -server "${JAVA_OPTS[@]}" -Dlogging.config="$LOGGING_CONFIG" -jar /usr/share/{{application}}/{{artifact}} &
 
 wait
