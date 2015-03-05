@@ -6,14 +6,13 @@ def specfile = specFileLineMatcher[0][1]
 
 def spec = new File(specfile).getText()
 
-assert spec.contains("URL: https://git.rz.is/groups/aws")
 assert spec.contains("Name: spring-boot-rpm-test-project")
 assert spec.contains("Version: 1.0")
 assert spec =~ /Release: \d{14}/
 assert spec.contains("Summary: Integration test for the plugin.")
 assert spec.contains("License: Proprietary")
 assert spec.contains("Vendor: Immobilien Scout GmbH")
-assert spec.contains("URL: https://git.rz.is/groups/aws")
+assert spec.contains("URL: https://github.com/ImmobilienScout24/spring-boot-rpm-maven-plugin")
 assert spec.contains("Group: application")
 assert spec.contains("Packager: Spring Boot Rpm Maven Plugin")
 assert spec.contains("Requires: bash")

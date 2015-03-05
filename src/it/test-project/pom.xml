@@ -16,7 +16,7 @@
 
     <name>Spring Boot Rpm Maven Plugin - Test Project</name>
     <description>Integration test for the plugin.</description>
-    <url>https://git.rz.is/groups/aws</url>
+    <url>https://github.com/ImmobilienScout24/spring-boot-rpm-maven-plugin</url>
     <organization><name>Immobilien Scout GmbH</name></organization>
 
     <properties>
