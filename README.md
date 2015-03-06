@@ -46,7 +46,7 @@ Usage
 
 Prerequisites
 =============
-* Java >= 1.7.0
+* Java >= 1.7.0 in your `$PATH`
 * Maven >= 3.2.3 (did not test with earlier versions)
 
 License
