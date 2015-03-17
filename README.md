@@ -9,7 +9,7 @@ When creating applications using Spring Boot you need connections to the underly
 * logging
 
 This glue code is often the same between applications and because of this copied around and then slightly modified.
-The Spring Boot RPM Maven plugin tries to give this stuff a home where it can be collaboratively maintained.
+The Spring Boot RPM Maven plugin tries to give this code a home where it can be collaboratively maintained.
 
 Features
 ========
@@ -20,6 +20,8 @@ Based on the Maven project it builds an RPM containing:
 * CloudWatch Logs compatible logging configuration:
  * Logback: `/etc/${project.artifactId}/default-logback.xml`
  * CloudWatch Logs client: `/etc/awslogs.conf.d/${project.artifactId}.conf`
+
+The resulting RPMs work on Amazon Linux, other Red Hat compatible distributions should work as well.
 
 Usage
 =====
@@ -48,6 +50,7 @@ Prerequisites
 =============
 * Java >= 1.7.0 in your `$PATH`
 * Maven >= 3.2.3 (did not test with earlier versions)
+* RPM
 
 License
 =======
