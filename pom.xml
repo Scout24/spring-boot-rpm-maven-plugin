@@ -39,6 +39,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.version>3.2.5</maven.version>
+        <skipTests>false</skipTests>
     </properties>
 
     <dependencies>
@@ -104,6 +105,8 @@
                     <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                     <localRepositoryPath>${project.build.directory}/it-repo</localRepositoryPath>
                     <debug>false</debug>
+                    <skipInstallation>${skipTests}</skipInstallation>
+                    <skipInvocation>${skipTests}</skipInvocation>
                 </configuration>
                 <executions>
                     <execution>
