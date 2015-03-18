@@ -10,6 +10,31 @@
     <packaging>maven-plugin</packaging>
 
     <name>Spring Boot RPM packaging for Linux</name>
+    <description>Maven plugin that builds an RPM with upstart service job for your executable jar/war (read: Spring Boot) artifact</description>
+    <url>https://github.com/ImmobilienScout24/spring-boot-rpm-maven-plugin</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:ImmobilienScout24/spring-boot-rpm-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:ImmobilienScout24/spring-boot-rpm-maven-plugin.git</developerConnection>
+        <url>https://github.com/ImmobilienScout24/spring-boot-rpm-maven-plugin.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Konrad Hosemann</name>
+            <email>konrad.hosemann@gmail.com</email>
+            <organization>Immobilien Scout GmbH</organization>
+            <organizationUrl>http://www.immobilienscout24.de</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,6 +111,34 @@
                         <goals>
                             <goal>install</goal>
                             <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Attach sources and javadoc as required by Maven Central -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
