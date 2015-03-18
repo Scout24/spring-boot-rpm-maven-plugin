@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ImmobilienScout24/spring-boot-rpm-maven-plugin.svg?branch=master)](https://travis-ci.org/ImmobilienScout24/spring-boot-rpm-maven-plugin)
+
 # spring-boot-rpm-maven-plugin
 Maven plugin that builds an RPM with upstart service job for your executable jar or war (read: Spring Boot) artifact
 
