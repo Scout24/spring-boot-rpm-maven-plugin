@@ -1,5 +1,5 @@
 # spring-boot-rpm-maven-plugin
-Maven plugin that builds an RPM with upstart service job
+Maven plugin that builds an RPM with upstart service job for your executable jar or war (read: Spring Boot) artifact
 
 Intention
 =========
