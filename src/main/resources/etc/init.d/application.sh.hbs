@@ -1,0 +1,74 @@
+#!/bin/sh -e
+# upstart-job
+#
+# Symlink target for initscripts that have been converted to Upstart.
+
+set -e
+
+JOB="{{application}}"
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 COMMAND" 1>&2
+  exit 1
+fi
+
+COMMAND="$1"
+shift
+
+
+# Only check if jobs are disabled if the currently _running_ version of
+# Upstart (which may be older than the latest _installed_ version)
+# supports such a query.
+#
+# This check is necessary to handle the scenario when upgrading from a
+# release without the 'show-config' command (introduced in
+# Upstart for Ubuntu version 0.9.7) since without this check, all
+# installed packages with associated Upstart jobs would be considered
+# disabled.
+#
+# Once Upstart can maintain state on re-exec, this change can be
+# dropped (since the currently running version of Upstart will always
+# match the latest installed version).
+
+case $COMMAND in
+status)
+    $COMMAND "$JOB"
+    ;;
+start|stop)
+    if status "$JOB" 2>/dev/null | grep -q ' start/'; then
+        RUNNING=1
+    fi
+    if [ -z "$RUNNING" ] && [ "$COMMAND" = "stop" ]; then
+        exit 0
+    elif [ -n "$RUNNING" ] && [ "$COMMAND" = "start" ]; then
+        exit 0
+    elif [ -n "$DISABLED" ] && [ "$COMMAND" = "start" ]; then
+        exit 0
+    fi
+    $COMMAND "$JOB"
+    ;;
+restart)
+    if status "$JOB" 2>/dev/null | grep -q ' start/'; then
+        RUNNING=1
+    fi
+    if [ -n "$RUNNING" ] ; then
+        stop "$JOB"
+    fi
+    # If the job is disabled and is not currently running, the job is
+    # not restarted. However, if the job is disabled but has been forced into the
+    # running state, we *do* stop and restart it since this is expected behaviour
+    # for the admin who forced the start.
+    if [ -n "$DISABLED" ] && [ -z "$RUNNING" ]; then
+        exit 0
+    fi
+    start "$JOB"
+    ;;
+reload|force-reload)
+    reload "$JOB"
+    ;;
+*)
+
+
+
+    exit 1
+esac
