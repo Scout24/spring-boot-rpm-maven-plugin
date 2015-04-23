@@ -31,10 +31,10 @@ assert spec.contains("""
 """)
 assert spec.contains("%dir %attr(755,root,root) \"/usr/share/spring-boot-rpm-test-project\"")
 assert spec.contains("/usr/share/spring-boot-rpm-test-project/spring-boot-rpm-test-project-1.0-SNAPSHOT.jar")
-assert spec.contains("/usr/share/spring-boot-rpm-test-project/start.sh")
+assert spec.contains("%attr(755,root,root)  \"//usr/share/spring-boot-rpm-test-project/start.sh")
 assert spec.contains("/etc/awslogs.conf.d/spring-boot-rpm-test-project.conf")
 assert spec.contains("/etc/init/spring-boot-rpm-test-project.conf")
-assert spec.contains("/etc/init.d/spring-boot-rpm-test-project.sh")
+assert spec.contains("%attr(755,root,root)  \"//etc/init.d/spring-boot-rpm-test-project")
 assert spec.contains("/etc/spring-boot-rpm-test-project/default-logback.xml")
 assert spec.contains("%dir %attr(755,spring-boot-rpm-test-project,spring-boot-rpm-test-project) \"/var/log/spring-boot-rpm-test-project\"")
 

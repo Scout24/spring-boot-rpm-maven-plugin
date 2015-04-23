@@ -125,11 +125,11 @@ public class Packager extends AbstractMojo {
             element("filemode", "755")),
           element("mapping",
             element("directory", "/usr/share/" + application),
-            element("filemode", "755"),
             element("sources", element("source",
                 element("location", "${project.build.directory}/" + artifact)))),
           element("mapping",
             element("directory", "/"),
+            element("filemode", "755"),
             element("directoryIncluded", "false"),
             element("sources", element("source",
                 element("location", generatedSourcesDir.getAbsolutePath())))),
@@ -174,7 +174,7 @@ public class Packager extends AbstractMojo {
     sourceFiles.add("etc/application/default-logback.xml");
     sourceFiles.add("etc/awslogs.conf.d/application.conf");
     sourceFiles.add("etc/init/application.conf");
-    sourceFiles.add("etc/init.d/application.sh");
+    sourceFiles.add("etc/init.d/application");
     sourceFiles.add("usr/share/application/start.sh");
 
     Map<String, String> model = new HashMap<>();
