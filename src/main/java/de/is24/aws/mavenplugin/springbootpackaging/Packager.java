@@ -14,6 +14,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 import org.twdata.maven.mojoexecutor.MojoExecutor;
+
 import javax.annotation.Nullable;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
+
 import static org.apache.maven.shared.utils.StringUtils.isEmpty;
 import static org.twdata.maven.mojoexecutor.MojoExecutor.configuration;
 import static org.twdata.maven.mojoexecutor.MojoExecutor.element;
@@ -172,7 +174,7 @@ public class Packager extends AbstractMojo {
 
     Set<String> sourceFiles = new LinkedHashSet<>();
     sourceFiles.add("etc/application/default-logback.xml");
-    sourceFiles.add("etc/awslogs.conf.d/application.conf");
+    sourceFiles.add("etc/awslogs/conf.d/application.conf");
     sourceFiles.add("etc/init/application.conf");
     sourceFiles.add("etc/init.d/application");
     sourceFiles.add("usr/share/application/start.sh");

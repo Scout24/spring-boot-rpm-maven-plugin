@@ -21,7 +21,7 @@ Based on the Maven project it builds an RPM containing:
 * upstart service job that runs the artifact under the previously created service user using `java -server` at system start: `/etc/init/${project.artifactId}`
 * CloudWatch Logs compatible logging configuration:
  * Logback: `/etc/${project.artifactId}/default-logback.xml`
- * CloudWatch Logs client: `/etc/awslogs.conf.d/${project.artifactId}.conf`
+ * CloudWatch Logs client: `/etc/awslogs/conf.d/${project.artifactId}.conf`
 
 The resulting RPMs work on Amazon Linux, other Red Hat compatible distributions should work as well.
 

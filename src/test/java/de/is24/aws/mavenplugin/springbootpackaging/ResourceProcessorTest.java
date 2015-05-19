@@ -35,7 +35,7 @@ public class ResourceProcessorTest {
 
 		Set<String> sourceFiles = new HashSet<>();
 		sourceFiles.add("etc/application/default-logback.xml");
-		sourceFiles.add("etc/awslogs.conf.d/application.conf");
+		sourceFiles.add("etc/awslogs/conf.d/application.conf");
 		sourceFiles.add("etc/init/application.conf");
 		sourceFiles.add("usr/share/application/start.sh");
 
@@ -66,7 +66,7 @@ public class ResourceProcessorTest {
 
 	@Test
 	public void generatesCloudWatchLogsConfig() throws IOException {
-		final String filename = "/etc/awslogs.conf.d/" + APPLICATION_NAME + ".conf";
+		final String filename = "/etc/awslogs/conf.d/" + APPLICATION_NAME + ".conf";
 
 		Set<String> files = resourceProcessor.generate();
 
