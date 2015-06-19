@@ -33,6 +33,7 @@ shift
 case $COMMAND in
 status)
     $COMMAND "$JOB"
+    status "$JOB" | grep -q "start" > /dev/null
     ;;
 start|stop)
     if status "$JOB" 2>/dev/null | grep -q ' start/'; then
