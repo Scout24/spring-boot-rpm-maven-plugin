@@ -3,6 +3,8 @@
 # spring-boot-rpm-maven-plugin
 Maven plugin that builds an RPM with upstart service job for your executable jar or war (read: Spring Boot) artifact
 
+# This project is DEPRECATED and not any longer supported
+
 Intention
 =========
 When creating applications using Spring Boot you need connections to the underlying operating system:
